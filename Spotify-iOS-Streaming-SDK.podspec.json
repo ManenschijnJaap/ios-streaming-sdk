@@ -1,0 +1,63 @@
+{
+  "name": "Spotify-iOS-Streaming-SDK",
+  "module_name": "Spotify",
+  "summary": "The new Spotify iOS SDK.",
+  "version": "0.25.0",
+  "source": {
+    "git": "https://github.com/ManenschijnJaap/ios-streaming-sdk.git",
+    "commit": "2db9f565b45e683b4bb62c1ee1bdc34660f07c8f"
+  },
+  "license": {
+    "type": "Proprietary",
+    "text": "https://developer.spotify.com/developer-terms-of-use/"
+  },
+  "authors": {
+    "Spotify": "https://developer.spotify.com/"
+  },
+  "homepage": "https://developer.spotify.com/technologies/spotify-ios-streaming-sdk/",
+  "platforms": {
+    "ios": "7.1"
+  },
+  "requires_arc": true,
+  "frameworks": [
+    "Foundation",
+    "AVFoundation"
+  ],
+  "pod_target_xcconfig": {
+    "OTHER_LDFLAGS": "$(inherited) -ObjC"
+  },
+  "user_target_xcconfig": {
+    "LIBRARY_SEARCH_PATHS": "$(inherited) \"$(PODS_ROOT)/Spotify-iOS-Streaming-SDK\""
+  },
+  "preserve_paths": [
+    "SpotifyAudioPlayback.framework/SpotifyAudioPlayback",
+    "SpotifyAuthentication.framework/SpotifyAuthentication",
+    "SpotifyMetadata.framework/SpotifyMetadata"
+  ],
+  "prepare_command": "touch Empty.m && cp SpotifyAudioPlayback.framework/SpotifyAudioPlayback libSpotifyAudioPlayback.a && cp SpotifyAudioPlayback.framework/Headers/* ./ && sed -i '' 's@<SpotifyAudioPlayback/@<Spotify/@g' *.h && cp SpotifyAuthentication.framework/SpotifyAuthentication libSpotifyAuthentication.a && cp SpotifyAuthentication.framework/Headers/* ./ && sed -i '' 's@<SpotifyAuthentication/@<Spotify/@g' *.h && cp SpotifyMetadata.framework/SpotifyMetadata libSpotifyMetadata.a && cp SpotifyMetadata.framework/Headers/* ./ && sed -i '' 's@<SpotifyMetadata/@<Spotify/@g' *.h",
+  "source_files": [
+    "Empty.m",
+    "*.h"
+  ],
+  "public_header_files": "*.h",
+  "default_subspecs": [
+    "Metadata",
+    "Authentication",
+    "Playback"
+  ],
+  "subspecs": [
+    {
+      "name": "Metadata",
+      "vendored_libraries": "libSpotifyMetadata.a"
+    },
+    {
+      "name": "Authentication",
+      "vendored_libraries": "libSpotifyAuthentication.a"
+    },
+    {
+      "name": "Playback",
+      "vendored_libraries": "libSpotifyAudioPlayback.a"
+    }
+  ]
+}
+
