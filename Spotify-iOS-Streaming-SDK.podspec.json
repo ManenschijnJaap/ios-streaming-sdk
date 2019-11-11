@@ -2,9 +2,10 @@
   "name": "Spotify-iOS-Streaming-SDK",
   "module_name": "Spotify",
   "summary": "The new Spotify iOS SDK.",
-  "version": "0.27.0",
+  "version": "0.25.0",
   "source": {
-    "git": "https://github.com/ManenschijnJaap/ios-streaming-sdk.git"
+    "git": "https://github.com/ManenschijnJaap/ios-streaming-sdk.git",
+    "commit": "2db9f565b45e683b4bb62c1ee1bdc34660f07c8f"
   },
   "license": {
     "type": "Proprietary",
