@@ -4,7 +4,7 @@
   "summary": "The new Spotify iOS SDK.",
   "version": "0.27.0",
   "source": {
-    "http": "https://github.com/ManenschijnJaap/ios-streaming-sdk/archive/beta-27.zip"
+    "git": "https://github.com/ManenschijnJaap/ios-streaming-sdk.git"
   },
   "license": {
     "type": "Proprietary",
@@ -29,11 +29,11 @@
     "LIBRARY_SEARCH_PATHS": "$(inherited) \"$(PODS_ROOT)/Spotify-iOS-Streaming-SDK\""
   },
   "preserve_paths": [
-    "ios-streaming-sdk-beta-27/SpotifyAudioPlayback.framework/SpotifyAudioPlayback",
-    "ios-streaming-sdk-beta-27/SpotifyAuthentication.framework/SpotifyAuthentication",
-    "ios-streaming-sdk-beta-27/SpotifyMetadata.framework/SpotifyMetadata"
+    "SpotifyAudioPlayback.framework/SpotifyAudioPlayback",
+    "SpotifyAuthentication.framework/SpotifyAuthentication",
+    "SpotifyMetadata.framework/SpotifyMetadata"
   ],
-  "prepare_command": "touch Empty.m && cp ios-streaming-sdk-beta-27/SpotifyAudioPlayback.framework/SpotifyAudioPlayback libSpotifyAudioPlayback.a && cp ios-streaming-sdk-beta-27/SpotifyAudioPlayback.framework/Headers/* ./ && sed -i '' 's@<SpotifyAudioPlayback/@<Spotify/@g' *.h && cp ios-streaming-sdk-beta-27/SpotifyAuthentication.framework/SpotifyAuthentication libSpotifyAuthentication.a && cp ios-streaming-sdk-beta-27/SpotifyAuthentication.framework/Headers/* ./ && sed -i '' 's@<SpotifyAuthentication/@<Spotify/@g' *.h && cp ios-streaming-sdk-beta-27/SpotifyMetadata.framework/SpotifyMetadata libSpotifyMetadata.a && cp ios-streaming-sdk-beta-27/SpotifyMetadata.framework/Headers/* ./ && sed -i '' 's@<SpotifyMetadata/@<Spotify/@g' *.h",
+  "prepare_command": "touch Empty.m && cp SpotifyAudioPlayback.framework/SpotifyAudioPlayback libSpotifyAudioPlayback.a && cp SpotifyAudioPlayback.framework/Headers/* ./ && sed -i '' 's@<SpotifyAudioPlayback/@<Spotify/@g' *.h && cp SpotifyAuthentication.framework/SpotifyAuthentication libSpotifyAuthentication.a && cp SpotifyAuthentication.framework/Headers/* ./ && sed -i '' 's@<SpotifyAuthentication/@<Spotify/@g' *.h && cp SpotifyMetadata.framework/SpotifyMetadata libSpotifyMetadata.a && cp SpotifyMetadata.framework/Headers/* ./ && sed -i '' 's@<SpotifyMetadata/@<Spotify/@g' *.h",
   "source_files": [
     "Empty.m",
     "*.h"
